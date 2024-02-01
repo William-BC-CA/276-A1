@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 :root{
     --turq: rgb(2, 183, 200);
@@ -8,16 +9,49 @@
     --sandcolor: rgb(246, 215, 176);
 }
 
+#top-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#top-container h1{
+    /* CSS TRANSITION */
+    transition-property: font-size;
+    transition-duration: 0.5s;
+}
+
+#top-container h1:hover{
+    font-size: 33px;
+}
+
+#top-container a{
+    text-decoration: none;
+    color: black;
+}
+
+#top-container h2{
+    font-family: 'Concert One';
+}
+
 header h1{
     font-family: "Anton";
 }
 
-nav ul li:first-of-type(1){
-    text-align: left;
+nav ul{
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
 }
 
-nav ul li:nth-of-type(2){
-    text-align: right;
+nav ul li{
+    margin-bottom: 10px;
+}
+
+nav ul li[id = "prevBtn"], nav ul li[id = "nextBtn"]{
+    width: 100px;
 }
 
 nav ul li{
@@ -28,6 +62,10 @@ nav ul li{
     background-color: var(--backgroundhov);
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
+
+    /* CSS TRANSITION */
+    transition-property: transform;
+    transition-duration: 0.5s;
 }
 
 nav ul li a{
@@ -86,7 +124,6 @@ label{
     font-family: "Concert One";
 
     /* CSS TRANSITION */
-    transition-name: highlight-background;
     transition-duration: 1s;
     transition-property: background-color;
 }
@@ -178,5 +215,49 @@ label:hover{
     }
     100%{
         border-color: black;
+    }
+}
+
+legend{
+    font-family: 'Concert One';
+    font-size: 1.5em;
+}
+
+footer{
+    font-family: 'Indie Flower';
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    nav ul{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* justify-content: center;
+        align-items: center; */
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+        /* padding: 10px; */
+        /* margin: 10px; */
+        width: 100%;
+    }
+    nav ul li{
+        margin-bottom: 0;
+    }
+    nav ul li[id = "prevBtn"]{
+        /* text-align: left; */
+        margin-right: auto;
+    }
+    
+    nav ul li[id = "nextBtn"]{
+        /* text-align: right;
+        position: relative;
+        left: 50vw; */
+        margin-left: auto;
+        /* margin-right: auto; */
+    }
+    nav ul li:hover{
+        transform: scale(1.1, 1.1);
     }
 }
