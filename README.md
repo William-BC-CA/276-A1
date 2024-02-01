@@ -1,3 +1,3 @@
-# 276-A1-RAW
+# 276-A1
 
-Raw files for CMPT 276 Assignment 1. It is used for file submission and not loaded on Render as expected by professor.
+CMPT 276 Assignment 1 now converted into a Spring Boot application.
