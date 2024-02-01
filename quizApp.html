@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - CMPT 276</title>
+    <link rel="stylesheet" href="/css/quizApp.css">
+</head>
+<body>
+    <div class = "wrapper">
+        <header>
+            <h1>Interactive Quiz</h1>
+            <nav>
+                <ul>
+                    <li><a href = "./home.html">Next &RightArrow;</a></li>
+                    <li><a href = "./home.html">Previous &LeftArrow;</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form>
+                <fieldset id = "q1">
+                    <!-- https://stackoverflow.com/questions/28543752/multiple-radio-button-groups-in-one-form -->
+                    <legend>Question 1: What does Plankton want from the Krusty Krab?</legend>
+                    <input type = "radio" id = "response1" name = "q1" value = "money">
+                    <label for = "response1">Money</label>
+                    <input type = "radio" id = "response2" name = "q1" value = "tartar sauce">
+                    <label for = "response2">Tartar Sauce </label>
+                    <input type = "radio" id = "response3" name = "q1" value = "secret formula">
+                    <label for = "response3">The Krabby Patty Secret Formula</label>
+                    <input type = "radio" id = "response4" name = "q1" value = "The Ugly Barnacle">
+                    <label for = "response4">The Ugly Barnacle</label>
+                </fieldset>
+            </form>
+        </main>
+        <footer>
+            <p>Copyright &copy; 2024. Created by William Chan.</p>
+        </footer>
+    </div>
+</body>
+</html>
