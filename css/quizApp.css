@@ -5,16 +5,34 @@
     --turq: rgb(2, 183, 200);
     --backgroundcol: rgb(247, 247, 247);
     --backgroundhov: rgb(187, 187, 187);
+    --sandcolor: rgb(246, 215, 176);
 }
 
 header h1{
     font-family: "Anton";
 }
 
+nav ul li:first-of-type(1){
+    text-align: left;
+}
+
+nav ul li:nth-of-type(2){
+    text-align: right;
+}
+
 nav ul li{
     font-family: "Concert One";
     list-style-type: none;
     display: inline-block;
+    border: 2px solid black;
+    background-color: var(--backgroundhov);
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--sandcolor);
 }
 
 .wrapper {
