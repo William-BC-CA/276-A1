@@ -68,9 +68,10 @@ nav ul li{
     transition-duration: 0.5s;
 }
 
-nav ul li a{
+nav ul li{
     text-decoration: none;
     color: var(--sandcolor);
+    cursor: pointer;
 }
 
 .wrapper {
@@ -178,7 +179,7 @@ input[type = "radio"]:checked + label{
 
 label:hover{
     background-color: var(--backgroundhov);
-    cursor:pointer;
+    cursor: pointer;
 
     /* CSS ANIMATION */
     animation-name: border-color-hover;
