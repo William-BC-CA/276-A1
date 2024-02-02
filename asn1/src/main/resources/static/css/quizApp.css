@@ -68,9 +68,10 @@ nav ul li{
     transition-duration: 0.5s;
 }
 
-nav ul li a{
+nav ul li{
     text-decoration: none;
     color: var(--sandcolor);
+    cursor: pointer;
 }
 
 .wrapper {
@@ -129,7 +130,8 @@ label{
 }
 
 input[type = "radio"]:checked + label{
-    background-color: green;
+    /* background-color: green; */
+    background-color: var(--backgroundhov);
 
     /* CSS ANIMATION */
     animation-name: border-color;
@@ -143,28 +145,28 @@ input[type = "radio"]:checked + label{
         border-color: black;
     }
     20%{
-        border-top-color: red;
+        border-top-color: yellow;
         /* border-right-color: yellow;
         border-bottom-color: yellow;
         border-left-color: yellow; */
     }
     40%{
-        border-top-color: red;
-        border-right-color: red;
+        border-top-color: yellow;
+        border-right-color: yellow;
         /* border-bottom-color: yellow;
         border-left-color: yellow; */
     }
     60%{
-        border-top-color: red;
-        border-right-color: red;
-        border-bottom-color: red;
+        border-top-color: yellow;
+        border-right-color: yellow;
+        border-bottom-color: yellow;
         /* border-left-color: yellow; */
     }
     80%{
-        border-top-color: red;
-        border-right-color: red;
-        border-bottom-color: red;
-        border-left-color: red;
+        border-top-color: yellow;
+        border-right-color: yellow;
+        border-bottom-color: yellow;
+        border-left-color: yellow;
     }
     100%{
         border-color: black;
@@ -177,7 +179,7 @@ input[type = "radio"]:checked + label{
 
 label:hover{
     background-color: var(--backgroundhov);
-    cursor:pointer;
+    cursor: pointer;
 
     /* CSS ANIMATION */
     animation-name: border-color-hover;
@@ -259,5 +261,12 @@ footer{
     }
     nav ul li:hover{
         transform: scale(1.1, 1.1);
+    }
+    fieldset{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,1fr);
+        /* justify-items: center; */
+        align-items: center;
     }
 }

@@ -12,17 +12,18 @@
     <link rel="icon" href="img/favicon-compressed.jpg"/>
     <title>Quiz App - CMPT 276</title>
     <link rel="stylesheet" href="/css/quizApp.css">
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
     <div class = "wrapper">
         <header>
             <div id = "top-container">
                 <h1 title = "Interactive Quiz"><a href = "./quizApp.html">Interactive Quiz</a></h1>
-                <h2>Question 1</h2>
+                <h2>Question <span id = "questionNum" value = "1">1</span> of 5</h2>
             </div>
         </header>
         <main>
-            <form>
+            <form id = "questionMenu">
                 <fieldset id = "q1">
                     <!-- https://stackoverflow.com/questions/28543752/multiple-radio-button-groups-in-one-form -->
                     <legend>What does Plankton want from the Krusty Krab?</legend>
@@ -38,8 +39,8 @@
             </form>
             <nav>
                 <ul>
-                    <li id = "prevBtn" title = "Previous Question"><a href = "./home.html">&LeftArrow; Previous</a></li>
-                    <li id = "nextBtn" title = "Next Question"><a href = "./home.html">Next &RightArrow;</a></li>
+                    <li id = "prevBtn" title = "Previous Question">&LeftArrow; Previous</li>
+                    <li id = "nextBtn" title = "Next Question">Next &RightArrow;</li>
                 </ul>
             </nav>
         </main>
