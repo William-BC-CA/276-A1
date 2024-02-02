@@ -5,9 +5,8 @@ let prevBtn = document.getElementById('prevBtn');
 let nextBtn = document.getElementById('nextBtn');
 
 // console.log(typeof questionNumber.value);
-console.log(questionNumber.value);
+console.log(questionNumber.innerHTML);
 
-// TODO: Fix!
-if (questionNumber == 1){
-    prevBtn.style.display = "none";
+if (questionNumber.innerHTML == 1){
+    prevBtn.style.visibility = "hidden"; // Or Display none
 }
