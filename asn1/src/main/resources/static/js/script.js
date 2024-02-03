@@ -15,13 +15,20 @@ let answer = document.getElementsByTagName('label');
 if (questionNumber.innerHTML == 1){
     prevBtn.style.visibility = "hidden"; // Or Display none
 }
-else if (questionNumber.innerHTML == 5){
-    nextBtn.style.visibility = "hidden"; // Or Display none
-}
 
-// TODO: Create action
-nextBtn.addEventListener('click', function(){
-    questionNumber.innerHTML = parseInt(questionNumber.innerHTML) + 1;
+function changeQuestion(){
+    if (questionNumber.innerHTML < 5){
+        prevBtn.style.visibility = "visible"; // Or Display none
+        nextBtn.style.visibility = "visible"; // Or Display none
+    }
+    if (questionNumber.innerHTML == 5){
+        nextBtn.style.visibility = "hidden"; // Or Display none
+        prevBtn.style.visibility = "visible"; // Or Display none
+    }
+    if (questionNumber.innerHTML == 1){
+        prevBtn.style.visibility = "hidden"; // Or Display none
+        nextBtn.style.visibility = "visible"; // Or Display none
+    }
     switch(questionNumber.innerHTML){
         case "2":
             getQuestion[0].innerHTML = "What defines Mr.Krabs?";
@@ -37,6 +44,29 @@ nextBtn.addEventListener('click', function(){
             answer[2].innerHTML = "Pearl";
             answer[3].innerHTML = "Karen";
             break;
-
+        case "4":
+            getQuestion[0].innerHTML = "Who bullied Spongebob?";
+            answer[0].innerHTML = "Flats the Flounder";
+            answer[1].innerHTML = "Mr. Krabs";
+            answer[2].innerHTML = "Patrick";
+            answer[3].innerHTML = "Sandy";
+            break;
+        case "5":
+            getQuestion[0].innerHTML = "Who needs oxygen to breathe?";
+            answer[0].innerHTML = "Spongebob";
+            answer[1].innerHTML = "Sandy";
+            answer[2].innerHTML = "Patrick";
+            answer[3].innerHTML = "Squidward";
+            break;
     }
+}
+
+prevBtn.addEventListener('click', function(){
+    questionNumber.innerHTML = parseInt(questionNumber.innerHTML) - 1;
+    changeQuestion();
+});
+
+nextBtn.addEventListener('click', function(){
+    questionNumber.innerHTML = parseInt(questionNumber.innerHTML) + 1;
+    changeQuestion();
 });
