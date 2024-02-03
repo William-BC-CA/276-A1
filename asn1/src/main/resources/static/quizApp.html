@@ -12,14 +12,14 @@
     <link rel="icon" href="img/favicon-compressed.jpg"/>
     <title>Quiz App - CMPT 276</title>
     <link rel="stylesheet" href="/css/quizApp.css">
-    <script src="/js/script.js" defer></script>
+    <script src="/js/quizLogic.js" defer></script>
 </head>
 <body>
     <div class = "wrapper">
         <header>
             <div id = "top-container">
                 <h1 title = "Interactive Quiz"><a href = "./quizApp.html">Interactive Quiz</a></h1>
-                <h2>Question <span id = "questionNum" value = "1">1</span> of 5</h2>
+                <h2 id = "questionProgress">Question <span id = "questionNum" value = "1">1</span> of 5</h2>
             </div>
         </header>
         <main>
@@ -27,23 +27,24 @@
                 <fieldset id = "q1">
                     <!-- https://stackoverflow.com/questions/28543752/multiple-radio-button-groups-in-one-form -->
                     <legend>What does Plankton want from the Krusty Krab?</legend>
-                    <input type = "radio" id = "response1" name = "q1" value = "money">
+                    <input type = "radio" id = "response1" name = "mc choices" value = "money">
                     <label for = "response1">Money</label>
-                    <input type = "radio" id = "response2" name = "q1" value = "tartar sauce">
+                    <input type = "radio" id = "response2" name = "mc choices" value = "tartar sauce">
                     <label for = "response2">Tartar Sauce </label>
-                    <input type = "radio" id = "response3" name = "q1" value = "secret formula">
+                    <input type = "radio" id = "response3" name = "mc choices" value = "secret formula">
                     <label for = "response3">The Krabby Patty Secret Formula</label>
-                    <input type = "radio" id = "response4" name = "q1" value = "The Ugly Barnacle">
+                    <input type = "radio" id = "response4" name = "mc choices" value = "The Ugly Barnacle">
                     <label for = "response4">A free drink</label>
                 </fieldset>
             </form>
             <nav>
                 <ul>
                     <li id = "prevBtn" title = "Previous Question">&LeftArrow; Previous</li>
-                    <li id = "submitBtn" title = "Submit Quiz">Submit</li>
+                    <!-- <li id = "submitBtn">Submit</li> -->
                     <li id = "nextBtn" title = "Next Question">Next &RightArrow;</li>
                 </ul>
             </nav>
+            <input type = "submit" id = "submitBtn" value = "Submit" title = "Submit Quiz">
         </main>
         <footer>
             <p>Copyright &copy; 2024. Created by William Chan.</p>
