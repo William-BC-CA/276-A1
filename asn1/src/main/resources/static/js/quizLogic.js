@@ -96,30 +96,95 @@ function changeQuestion(){
 }
 
 // TODO: Get user data and clear radio buttons when moving next
+// FIXME: Recommend creating functions for similar code!
+// FIXME: Remove counter in place of parseInt operation!
 
-let count = 1;
+let qCount = 1;
 
 prevBtn.addEventListener('click', function(){
-    console.log(count);
-    userAnswers[count - 1] = document.querySelector('input[name="mc choices"]:checked').value;
+    // Checks if user has already made a selection
+    qCount--;
     questionNumber.innerHTML = parseInt(questionNumber.innerHTML) - 1;
     changeQuestion();
-    count--;
+    console.log(userAnswers);
+    console.log("Choices:");
+    console.log(getResponse1.value);
+    console.log(getResponse2.value);
+    console.log(getResponse3.value);
+    console.log(getResponse4.value);
+    if (userAnswers[qCount - 1] == ""){
+        getResponse1.checked = false;
+        getResponse2.checked = false;
+        getResponse3.checked = false;
+        getResponse4.checked = false;
+    }
+    else if (userAnswers[qCount - 1] == getResponse1.value){
+        getResponse1.checked = true;
+    }
+    else if (userAnswers[qCount - 1] == getResponse2.value){
+        getResponse2.checked = true;
+    }
+    else if (userAnswers[qCount - 1] == getResponse3.value){
+        getResponse3.checked = true;
+    }
+    else if (userAnswers[qCount - 1] == getResponse4.value){
+        getResponse4.checked = true;
+    }
 });
 
 nextBtn.addEventListener('click', function(){
-    console.log(count);
-    userAnswers[count - 1] = document.querySelector('input[name="mc choices"]:checked').value;
-    console.log(userAnswers);
+    qCount++;
     questionNumber.innerHTML = parseInt(questionNumber.innerHTML) + 1;
     changeQuestion();
-    count++;
+    console.log(userAnswers);
+    console.log("Choices:");
+    console.log(getResponse1.value);
+    console.log(getResponse2.value);
+    console.log(getResponse3.value);
+    console.log(getResponse4.value);
+    if (userAnswers[qCount - 1] == ""){
+        getResponse1.checked = false;
+        getResponse2.checked = false;
+        getResponse3.checked = false;
+        getResponse4.checked = false;
+    }
+    else if (userAnswers[qCount - 1] == getResponse1.value){
+        getResponse1.checked = true;
+    }
+    else if (userAnswers[qCount - 1] == getResponse2.value){
+        getResponse2.checked = true;
+    }
+    else if (userAnswers[qCount - 1] == getResponse3.value){
+        getResponse3.checked = true;
+    }
+    else if (userAnswers[qCount - 1] == getResponse4.value){
+        getResponse4.checked = true;
+    }
+});
+
+getResponse1.addEventListener('click', function(){
+    userAnswers[qCount - 1] = getResponse1.value;
+    console.log(userAnswers);
+});
+
+getResponse2.addEventListener('click', function(){
+    userAnswers[qCount - 1] = getResponse2.value;
+    console.log(userAnswers);
+});
+
+getResponse3.addEventListener('click', function(){
+    userAnswers[qCount - 1] = getResponse3.value;
+    console.log(userAnswers);
+});
+
+getResponse4.addEventListener('click', function(){
+    userAnswers[qCount - 1] = getResponse4.value;
+    console.log(userAnswers);
 });
 
 submitBtn.addEventListener('click', function(e){
     e.preventDefault();
-    console.log(count);
-    userAnswers[count - 1] = document.querySelector('input[name="mc choices"]:checked').value;
+    userAnswers[qCount - 1] = document.querySelector('input[name="mc choices"]:checked').value;
     console.log(userAnswers);
     let hideQNumber = document.getElementById('questionProgress');
     hideQNumber.innerHTML = "Results";
