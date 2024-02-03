@@ -30,6 +30,13 @@ function changeQuestion(){
         nextBtn.style.visibility = "visible"; // Or Display none
     }
     switch(questionNumber.innerHTML){
+        case "1":
+            getQuestion[0].innerHTML = "What does Plankton want from the Krusty Krab?";
+            answer[0].innerHTML = "Money";
+            answer[1].innerHTML = "Tartar Sauce";
+            answer[2].innerHTML = "The Krabby Patty Secret Formula";
+            answer[3].innerHTML = "A free drink";
+            break;
         case "2":
             getQuestion[0].innerHTML = "What defines Mr.Krabs?";
             answer[0].innerHTML = "Annoying";
@@ -45,15 +52,15 @@ function changeQuestion(){
             answer[3].innerHTML = "Karen";
             break;
         case "4":
-            getQuestion[0].innerHTML = "Who bullied Spongebob?";
+            getQuestion[0].innerHTML = "Who bullied SpongeBob at Mrs. Puff's Boating School?";
             answer[0].innerHTML = "Flats the Flounder";
             answer[1].innerHTML = "Mr. Krabs";
             answer[2].innerHTML = "Patrick";
             answer[3].innerHTML = "Sandy";
             break;
         case "5":
-            getQuestion[0].innerHTML = "Who needs oxygen to breathe?";
-            answer[0].innerHTML = "Spongebob";
+            getQuestion[0].innerHTML = "Which character needs oxygen to breathe?";
+            answer[0].innerHTML = "SpongeBob";
             answer[1].innerHTML = "Sandy";
             answer[2].innerHTML = "Patrick";
             answer[3].innerHTML = "Squidward";
