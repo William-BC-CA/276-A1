@@ -112,6 +112,12 @@ prevBtn.addEventListener('click', function(){
     // qCount--;
     questionNumber.innerHTML = parseInt(questionNumber.innerHTML) - 1;
     qCount = parseInt(questionNumber.innerHTML) - 1;
+    if (userAnswers[qCount] == ""){
+        nextBtn.style.display = "none";
+    }
+    else {
+        nextBtn.style.display = "block";
+    }
     changeQuestion();
     // console.log(userAnswers);
     // console.log("Choices:");
