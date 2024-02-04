@@ -7,6 +7,7 @@
     --backgroundcol: rgb(247, 247, 247);
     --backgroundhov: rgb(187, 187, 187);
     --sandcolor: rgb(246, 215, 176);
+    --darkturq: rgb(0, 123, 183);
 }
 
 #top-container{
@@ -18,6 +19,7 @@
     /* CSS TRANSITION */
     transition-property: font-size;
     transition-duration: 0.5s;
+    margin-left: 15px;
 }
 
 #top-container h1:hover{
@@ -46,12 +48,10 @@ nav ul{
     padding-top: 20px;
 }
 
-nav ul li{
-    margin-bottom: 10px;
-}
-
-nav ul li[id = "prevBtn"], nav ul li[id = "nextBtn"]{
-    width: 100px;
+/* ! I had to split this away from the bottom selector or else the width will not work! */
+nav ul li[id = "prevBtn"], nav ul li[id = "nextBtn"], nav ul li[id = "submitBtn"]{
+    width: 80px;
+    text-align: center;
 }
 
 nav ul li{
@@ -59,19 +59,51 @@ nav ul li{
     list-style-type: none;
     display: inline-block;
     border: 2px solid black;
-    background-color: var(--backgroundhov);
+    background-color: var(--darkturq);
     border-radius: 10px;
     padding: 5px 20px 5px 20px;
+    margin-bottom: 10px;
 
     /* CSS TRANSITION */
     transition-property: transform;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
 }
 
 nav ul li{
     text-decoration: none;
-    color: var(--sandcolor);
+    color: white;
     cursor: pointer;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3 */
+nav ul li:active{
+    box-shadow: 0 2px rgba(0, 0, 0, 0.3);
+    transform: translateY(3px);
+}
+
+input[id = "submitBtn"]{
+    cursor: pointer;
+    font-family: "Concert One";
+    display: block;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+    margin: auto;
+    margin-top: 50px;
+
+    /* CSS TRANSITION */
+    transition-property: transform;
+    transition-duration: 0.2s;
+}
+
+input[id = "submitBtn"]:hover{
+    transform: scale(1.1, 1.1);
+}
+
+input[id = "submitBtn"]:active{
+    transform: scale(0.9, 0.9);
 }
 
 .wrapper {
@@ -107,6 +139,7 @@ body{
 
 fieldset {
     overflow-x: auto;
+    margin-top: 20px;
 }
 
 /* Simply removes the radio buttons */
@@ -135,6 +168,13 @@ input[type = "radio"]:checked + label{
 
     /* CSS ANIMATION */
     animation-name: border-color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.correct-response-input{
+    animation-name: border-color-correct;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -145,28 +185,61 @@ input[type = "radio"]:checked + label{
         border-color: black;
     }
     20%{
-        border-top-color: yellow;
+        border-top-color: var(--sandcolor);
+        /* border-right-color: var(--sandcolor);
+        border-bottom-color: var(--sandcolor);
+        border-left-color: var(--sandcolor); */
+    }
+    40%{
+        border-top-color: var(--sandcolor);
+        border-right-color: var(--sandcolor);
+        /* border-bottom-color: var(--sandcolor);
+        border-left-color: var(--sandcolor); */
+    }
+    60%{
+        border-top-color: var(--sandcolor);
+        border-right-color: var(--sandcolor);
+        border-bottom-color: var(--sandcolor);
+        /* border-left-color: var(--sandcolor); */
+    }
+    80%{
+        border-top-color: var(--sandcolor);
+        border-right-color: var(--sandcolor);
+        border-bottom-color: var(--sandcolor);
+        border-left-color: var(--sandcolor);
+    }
+    100%{
+        border-color: black;
+    }
+}
+
+@keyframes border-color-correct{
+    0%{
+        border-color: black;
+    }
+    20%{
+        border-top-color: var(--turq) !important;
         /* border-right-color: yellow;
         border-bottom-color: yellow;
         border-left-color: yellow; */
     }
     40%{
-        border-top-color: yellow;
-        border-right-color: yellow;
+        border-top-color: var(--turq) !important;
+        border-right-color: var(--turq) !important;
         /* border-bottom-color: yellow;
         border-left-color: yellow; */
     }
     60%{
-        border-top-color: yellow;
-        border-right-color: yellow;
-        border-bottom-color: yellow;
+        border-top-color: var(--turq) !important;
+        border-right-color: var(--turq) !important;
+        border-bottom-color: var(--turq) !important;
         /* border-left-color: yellow; */
     }
     80%{
-        border-top-color: yellow;
-        border-right-color: yellow;
-        border-bottom-color: yellow;
-        border-left-color: yellow;
+        border-top-color: var(--turq) !important;
+        border-right-color: var(--turq) !important;
+        border-bottom-color: var(--turq) !important;
+        border-left-color: var(--turq) !important;
     }
     100%{
         border-color: black;
@@ -234,21 +307,28 @@ footer{
 @media (min-width: 768px){
     nav ul{
         display: grid;
+        /* grid-template-columns: repeat(3, 1fr); */
         grid-template-columns: repeat(2, 1fr);
         /* justify-content: center;
         align-items: center; */
-        padding-left: 0;
+        /* padding-left: 0;
         margin-left: 0;
-        margin-right: 0;
+        margin-right: 0; */
         /* padding: 10px; */
         /* margin: 10px; */
         width: 100%;
     }
     nav ul li{
         margin-bottom: 0;
+        width: 20%;
     }
     nav ul li[id = "prevBtn"]{
         /* text-align: left; */
+        margin-right: auto;
+    }
+
+    nav ul li[id = "submitBtn"]{
+        margin-left: auto;
         margin-right: auto;
     }
     
@@ -262,11 +342,20 @@ footer{
     nav ul li:hover{
         transform: scale(1.1, 1.1);
     }
+    /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3 */
+    nav ul li:active{
+        box-shadow: 0 2px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1, 1.1) translateY(5px);
+    }
     fieldset{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2,1fr);
         /* justify-items: center; */
         align-items: center;
+    }
+    .wrapper{
+        width: 750px; /* Maintain size */
+        transform: translateY(50%);
     }
 }
