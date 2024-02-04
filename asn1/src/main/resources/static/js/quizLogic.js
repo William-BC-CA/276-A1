@@ -1,6 +1,4 @@
-// console.log("Hello");
 let questionNumber = document.getElementById('questionNum');
-// questionNumber.innerHTML = "5";
 let prevBtn = document.getElementById('prevBtn');
 let submitBtn = document.getElementById('submitBtn');
 let nextBtn = document.getElementById('nextBtn');
@@ -19,9 +17,6 @@ let trueAnswers = ["The Krabby Patty Secret Formula", "Greedy", "Karen", "Flats 
 let userAnswers = ["", "", "", "", ""];
 
 let wholeForm = document.getElementById("questionMenu");
-
-// console.log(typeof questionNumber.value);
-// console.log(questionNumber.innerHTML);
 
 if (questionNumber.innerHTML == 1){
     prevBtn.style.visibility = "hidden"; // Or Display none
@@ -101,15 +96,7 @@ function changeQuestion(){
     }
 }
 
-// TODO: Get user data and clear radio buttons when moving next
-// FIXME: Recommend creating functions for similar code!
-// FIXME: Remove counter in place of parseInt operation!
-
-// let qCount = 1;
-
 prevBtn.addEventListener('click', function(){
-    // Checks if user has already made a selection
-    // qCount--;
     questionNumber.innerHTML = parseInt(questionNumber.innerHTML) - 1;
     qCount = parseInt(questionNumber.innerHTML) - 1;
     if (userAnswers[qCount] == ""){
@@ -119,12 +106,6 @@ prevBtn.addEventListener('click', function(){
         nextBtn.style.display = "block";
     }
     changeQuestion();
-    // console.log(userAnswers);
-    // console.log("Choices:");
-    // console.log(getResponse1.value);
-    // console.log(getResponse2.value);
-    // console.log(getResponse3.value);
-    // console.log(getResponse4.value);
     if (userAnswers[qCount] == ""){
         getResponse1.checked = false;
         getResponse2.checked = false;
@@ -146,10 +127,8 @@ prevBtn.addEventListener('click', function(){
 });
 
 nextBtn.addEventListener('click', function(){
-    // qCount++;
     questionNumber.innerHTML = parseInt(questionNumber.innerHTML) + 1;
     qCount = parseInt(questionNumber.innerHTML) - 1;
-    // nextBtn.classList.add("invisible");
     if (userAnswers[qCount] == ""){
         nextBtn.style.display = "none";
     }
@@ -157,12 +136,6 @@ nextBtn.addEventListener('click', function(){
         nextBtn.style.display = "block";
     }
     changeQuestion();
-    // console.log(userAnswers);
-    // console.log("Choices:");
-    // console.log(getResponse1.value);
-    // console.log(getResponse2.value);
-    // console.log(getResponse3.value);
-    // console.log(getResponse4.value);
     if (userAnswers[qCount] == ""){
         getResponse1.checked = false;
         getResponse2.checked = false;
@@ -185,30 +158,22 @@ nextBtn.addEventListener('click', function(){
 
 getResponse1.addEventListener('click', function(){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse1.value;
-    // nextBtn.classList.remove("invisible");
     nextBtn.style.display = "block";
-    // console.log(userAnswers);
 });
 
 getResponse2.addEventListener('click', function(){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse2.value;
-    // nextBtn.classList.remove("invisible");
     nextBtn.style.display = "block";
-    // console.log(userAnswers);
 });
 
 getResponse3.addEventListener('click', function(){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse3.value;
-    // nextBtn.classList.remove("invisible");
     nextBtn.style.display = "block";
-    // console.log(userAnswers);
 });
 
 getResponse4.addEventListener('click', function(e){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse4.value;
-    // nextBtn.classList.remove("invisible");
     nextBtn.style.display = "block";
-    // console.log(userAnswers);
 });
 
 submitBtn.addEventListener('click', function(e){
@@ -222,19 +187,6 @@ submitBtn.addEventListener('click', function(e){
     nextBtn.remove();
     submitBtn.remove();
     document.getElementById('theQuestions').remove();
-    // getQuestion[0].innerHTML = "What does Plankton want from the Krusty Krab?";
-    // answer[0].innerHTML = "Money";
-    // getResponse1.value = "Money";
-    // getResponse1.disabled = true;
-    // answer[1].innerHTML = "Tartar Sauce";
-    // getResponse2.value = "Tartar Sauce";
-    // getResponse2.disabled = true;
-    // answer[2].innerHTML = "The Krabby Patty Secret Formula";
-    // getResponse3.value = "The Krabby Patty Secret Formula";
-    // getResponse3.disabled = true;
-    // answer[3].innerHTML = "A free drink";
-    // getResponse4.value = "A free drink";
-    // getResponse4.disabled = true;
 
     let info = document.createElement("p");
     info.innerHTML = "Red is an incorrect response. Green is the correct response. Blue is the correct response when no response is given.";
@@ -271,7 +223,6 @@ submitBtn.addEventListener('click', function(e){
     if (userAnswers[0] == res1.value){
         res1.checked = true;
         label1.style.setProperty("background-color", "red");
-        // label1.classList.add("label-response-input");
         label3.classList.add("correct-response-input");
         label3.style.setProperty("background-color", "green");
         res2.checked = false;
@@ -281,7 +232,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[0] == res2.value){
         res2.checked = true;
         label2.style.setProperty("background-color", "red");
-        // label2.classList.add("label-response-input");
         label3.classList.add("correct-response-input");
         label3.style.setProperty("background-color", "green");
         res1.checked = false;
@@ -300,7 +250,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[0] == res4.value){
         res4.checked = true;
         label4.style.setProperty("background-color", "red");
-        // label4.classList.add("label-response-input");
         label3.classList.add("correct-response-input");
         label3.style.setProperty("background-color", "green");
         res1.checked = false;
@@ -326,39 +275,30 @@ submitBtn.addEventListener('click', function(e){
     r1.setAttribute("type", "radio");
     r1.setAttribute("value", "Annoying");
     r1.setAttribute("disabled", "true");
-    // r1.type = "radio";
-    // r1.value = "Annoying";
     let a1 = document.createElement("label");
     a1.innerHTML = "Annoying";
     let r2 = document.createElement("input");
     r2.setAttribute("type", "radio");
     r2.setAttribute("value", "Greedy");
     r2.setAttribute("disabled", "true");
-    // r2.type = "radio";
-    // r2.value = "Greedy";
     let a2 = document.createElement("label");
     a2.innerHTML = "Greedy";
     let r3 = document.createElement("input");
     r3.setAttribute("type", "radio");
     r3.setAttribute("value", "Generous");
     r3.setAttribute("disabled", "true");
-    // r3.type = "radio";
-    // r3.value = "Generous";
     let a3 = document.createElement("label");
     a3.innerHTML = "Generous";
     let r4 = document.createElement("input");
     r4.setAttribute("type", "radio");
     r4.setAttribute("value", "Young");
     r4.setAttribute("disabled", "true");
-    // r4.type = "radio";
-    // r4.value = "Young";
     let a4 = document.createElement("label");
     a4.innerHTML = "Young";
 
     if (userAnswers[1] == r1.value){
         r1.checked = true;
         a1.style.setProperty("background-color", "red");
-        // a1.classList.add("label-response-input");
         a2.style.setProperty("background-color", "green");
         a2.classList.add("correct-response-input");
         r3.checked = false;
@@ -377,7 +317,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[1] == r3.value){
         r3.checked = true;
         a3.style.setProperty("background-color", "red");
-        // a3.classList.add("label-response-input");
         a2.style.setProperty("background-color", "green");
         a2.classList.add("correct-response-input");
         r1.checked = false;
@@ -387,7 +326,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[1] == r4.value){
         r4.checked = true;
         a4.style.setProperty("background-color", "red");
-        // a4.classList.add("label-response-input");
         a2.style.setProperty("background-color", "green");
         a2.classList.add("correct-response-input");
         r1.checked = false;
@@ -415,39 +353,30 @@ submitBtn.addEventListener('click', function(e){
     r5.setAttribute("type", "radio");
     r5.setAttribute("value", "Sandy");
     r5.setAttribute("disabled", "true");
-    // r5.type = "radio";
-    // r5.value = "Sandy";
     let a5 = document.createElement("label");
     a5.innerHTML = "Sandy";
     let r6 = document.createElement("input");
     r6.setAttribute("type", "radio");
     r6.setAttribute("value", "Mrs. Puff");
     r6.setAttribute("disabled", "true");
-    // r6.type = "radio";
-    // r6.value = "Mrs. Puff";
     let a6 = document.createElement("label");
     a6.innerHTML = "Mrs. Puff";
     let r7 = document.createElement("input");
     r7.setAttribute("type", "radio");
     r7.setAttribute("value", "Pearl");
     r7.setAttribute("disabled", "true");
-    // r7.type = "radio";
-    // r7.value = "Pearl";
     let a7 = document.createElement("label");
     a7.innerHTML = "Pearl";
     let r8 = document.createElement("input");
     r8.setAttribute("type", "radio");
     r8.setAttribute("value", "Karen");
     r8.setAttribute("disabled", "true");
-    // r8.type = "radio";
-    // r8.value = "Karen";
     let a8 = document.createElement("label");
     a8.innerHTML = "Karen";
 
     if (userAnswers[2] == r5.value){
         r5.checked = true;
         a5.style.setProperty("background-color", "red");
-        // a5.classList.add("label-response-input");
         a8.style.setProperty("background-color", "green");
         a8.classList.add("correct-response-input");
         r6.checked = false;
@@ -457,7 +386,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[2] == r6.value){
         r6.checked = true;
         a6.style.setProperty("background-color", "red");
-        // a6.classList.add("label-response-input");
         a8.style.setProperty("background-color", "green");
         a8.classList.add("correct-response-input");
         r5.checked = false;
@@ -467,7 +395,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[2] == r7.value){
         r7.checked = true;
         a7.style.setProperty("background-color", "red");
-        // a7.classList.add("label-response-input");
         a8.style.setProperty("background-color", "green");
         a8.classList.add("correct-response-input");
         r5.checked = false;
@@ -502,32 +429,24 @@ submitBtn.addEventListener('click', function(e){
     r9.setAttribute("type", "radio");
     r9.setAttribute("value", "Flats the Flounder");
     r9.setAttribute("disabled", "true");
-    // r9.type = "radio";
-    // r9.value = "Flats the Flounder";
     let a9 = document.createElement("label");
     a9.innerHTML = "Flats the Flounder";
     let r10 = document.createElement("input");
     r10.setAttribute("type", "radio");
     r10.setAttribute("value", "Mr. Krabs");
     r10.setAttribute("disabled", "true");
-    // r10.type = "radio";
-    // r10.value = "Mr. Krabs";
     let a10 = document.createElement("label");
     a10.innerHTML = "Mr. Krabs";
     let r11 = document.createElement("input");
     r11.setAttribute("type", "radio");
     r11.setAttribute("value", "Patrick");
     r11.setAttribute("disabled", "true");
-    // r11.type = "radio";
-    // r11.value = "Patrick";
     let a11 = document.createElement("label");
     a11.innerHTML = "Patrick";
     let r12 = document.createElement("input");
     r12.setAttribute("type", "radio");
     r12.setAttribute("value", "Sandy");
     r12.setAttribute("disabled", "true");
-    // r12.type = "radio";
-    // r12.value = "Sandy";
     let a12 = document.createElement("label");
     a12.innerHTML = "Sandy";
 
@@ -543,7 +462,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[3] == r10.value){
         r10.checked = true;
         a10.style.setProperty("background-color", "red");
-        // a10.classList.add("label-response-input");
         a9.style.setProperty("background-color", "green");
         a9.classList.add("correct-response-input");
         r11.checked = false;
@@ -553,7 +471,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[3] == r11.value){
         r11.checked = true;
         a11.style.setProperty("background-color", "red");
-        // a11.classList.add("label-response-input");
         a9.style.setProperty("background-color", "green");
         a9.classList.add("correct-response-input");
         r12.checked = false;
@@ -563,7 +480,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[3] == r12.value){
         r12.checked = true;
         a12.style.setProperty("background-color", "red");
-        // a12.classList.add("label-response-input");
         a9.style.setProperty("background-color", "green");
         a9.classList.add("correct-response-input");
         r11.checked = false;
@@ -589,39 +505,30 @@ submitBtn.addEventListener('click', function(e){
     r13.setAttribute("type", "radio");
     r13.setAttribute("value", "SpongeBob");
     r13.setAttribute("disabled", "true");
-    // r13.type = "radio";
-    // r13.value = "SpongeBob";
     let a13 = document.createElement("label");
     a13.innerHTML = "SpongeBob";
     let r14 = document.createElement("input");
     r14.setAttribute("type", "radio");
     r14.setAttribute("value", "Sandy");
     r14.setAttribute("disabled", "true");
-    // r14.type = "radio";
-    // r14.value = "Sandy";
     let a14 = document.createElement("label");
     a14.innerHTML = "Sandy";
     let r15 = document.createElement("input");
     r15.setAttribute("type", "radio");
     r15.setAttribute("value", "Patrick");
     r15.setAttribute("disabled", "true");
-    // r15.type = "radio";
-    // r15.value = "Patrick";
     let a15 = document.createElement("label");
     a15.innerHTML = "Patrick";
     let r16 = document.createElement("input");
     r16.setAttribute("type", "radio");
     r16.setAttribute("value", "Squidward");
     r16.setAttribute("disabled", "true");
-    // r16.type = "radio";
-    // r16.value = "Squidward";
     let a16 = document.createElement("label");
     a16.innerHTML = "Squidward";
 
     if (userAnswers[4] == r13.value){
         r13.checked = true;
         a13.style.setProperty("background-color", "red");
-        // a13.classList.add("label-response-input");
         a14.style.setProperty("background-color", "green");
         a14.classList.add("correct-response-input");
         r15.checked = false;
@@ -640,7 +547,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[4] == r15.value){
         r15.checked = true;
         a15.style.setProperty("background-color", "red");
-        // a15.classList.add("label-response-input");
         a14.style.setProperty("background-color", "green");
         a14.classList.add("correct-response-input");
         r13.checked = false;
@@ -650,7 +556,6 @@ submitBtn.addEventListener('click', function(e){
     else if (userAnswers[4] == r16.value){
         r16.checked = true;
         a16.style.setProperty("background-color", "red");
-        // a16.classList.add("label-response-input");
         a14.style.setProperty("background-color", "green");
         a14.classList.add("correct-response-input");
         r13.checked = false;
