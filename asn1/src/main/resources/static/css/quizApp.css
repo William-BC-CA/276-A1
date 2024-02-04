@@ -19,6 +19,7 @@
     /* CSS TRANSITION */
     transition-property: font-size;
     transition-duration: 0.5s;
+    margin-left: 15px;
 }
 
 #top-container h1:hover{
@@ -138,6 +139,7 @@ body{
 
 fieldset {
     overflow-x: auto;
+    margin-top: 20px;
 }
 
 /* Simply removes the radio buttons */
@@ -166,6 +168,13 @@ input[type = "radio"]:checked + label{
 
     /* CSS ANIMATION */
     animation-name: border-color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.correct-response-input{
+    animation-name: border-color-correct;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -176,28 +185,61 @@ input[type = "radio"]:checked + label{
         border-color: black;
     }
     20%{
-        border-top-color: yellow;
+        border-top-color: var(--sandcolor);
+        /* border-right-color: var(--sandcolor);
+        border-bottom-color: var(--sandcolor);
+        border-left-color: var(--sandcolor); */
+    }
+    40%{
+        border-top-color: var(--sandcolor);
+        border-right-color: var(--sandcolor);
+        /* border-bottom-color: var(--sandcolor);
+        border-left-color: var(--sandcolor); */
+    }
+    60%{
+        border-top-color: var(--sandcolor);
+        border-right-color: var(--sandcolor);
+        border-bottom-color: var(--sandcolor);
+        /* border-left-color: var(--sandcolor); */
+    }
+    80%{
+        border-top-color: var(--sandcolor);
+        border-right-color: var(--sandcolor);
+        border-bottom-color: var(--sandcolor);
+        border-left-color: var(--sandcolor);
+    }
+    100%{
+        border-color: black;
+    }
+}
+
+@keyframes border-color-correct{
+    0%{
+        border-color: black;
+    }
+    20%{
+        border-top-color: var(--turq) !important;
         /* border-right-color: yellow;
         border-bottom-color: yellow;
         border-left-color: yellow; */
     }
     40%{
-        border-top-color: yellow;
-        border-right-color: yellow;
+        border-top-color: var(--turq) !important;
+        border-right-color: var(--turq) !important;
         /* border-bottom-color: yellow;
         border-left-color: yellow; */
     }
     60%{
-        border-top-color: yellow;
-        border-right-color: yellow;
-        border-bottom-color: yellow;
+        border-top-color: var(--turq) !important;
+        border-right-color: var(--turq) !important;
+        border-bottom-color: var(--turq) !important;
         /* border-left-color: yellow; */
     }
     80%{
-        border-top-color: yellow;
-        border-right-color: yellow;
-        border-bottom-color: yellow;
-        border-left-color: yellow;
+        border-top-color: var(--turq) !important;
+        border-right-color: var(--turq) !important;
+        border-bottom-color: var(--turq) !important;
+        border-left-color: var(--turq) !important;
     }
     100%{
         border-color: black;
