@@ -27,6 +27,8 @@ if (questionNumber.innerHTML == 1){
     prevBtn.style.visibility = "hidden"; // Or Display none
 }
 
+nextBtn.style.display = "none"; // Or Display none
+
 function changeQuestion(){
     if (questionNumber.innerHTML < 5){
         prevBtn.style.visibility = "visible"; // Or Display none
@@ -141,6 +143,13 @@ nextBtn.addEventListener('click', function(){
     // qCount++;
     questionNumber.innerHTML = parseInt(questionNumber.innerHTML) + 1;
     qCount = parseInt(questionNumber.innerHTML) - 1;
+    // nextBtn.classList.add("invisible");
+    if (userAnswers[qCount] == ""){
+        nextBtn.style.display = "none";
+    }
+    else {
+        nextBtn.style.display = "block";
+    }
     changeQuestion();
     // console.log(userAnswers);
     // console.log("Choices:");
@@ -170,21 +179,29 @@ nextBtn.addEventListener('click', function(){
 
 getResponse1.addEventListener('click', function(){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse1.value;
+    // nextBtn.classList.remove("invisible");
+    nextBtn.style.display = "block";
     // console.log(userAnswers);
 });
 
 getResponse2.addEventListener('click', function(){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse2.value;
+    // nextBtn.classList.remove("invisible");
+    nextBtn.style.display = "block";
     // console.log(userAnswers);
 });
 
 getResponse3.addEventListener('click', function(){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse3.value;
+    // nextBtn.classList.remove("invisible");
+    nextBtn.style.display = "block";
     // console.log(userAnswers);
 });
 
-getResponse4.addEventListener('click', function(){
+getResponse4.addEventListener('click', function(e){
     userAnswers[parseInt(questionNumber.innerHTML) - 1] = getResponse4.value;
+    // nextBtn.classList.remove("invisible");
+    nextBtn.style.display = "block";
     // console.log(userAnswers);
 });
 

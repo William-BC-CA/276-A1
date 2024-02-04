@@ -54,6 +54,10 @@ nav ul li[id = "prevBtn"], nav ul li[id = "nextBtn"], nav ul li[id = "submitBtn"
     text-align: center;
 }
 
+.invisible{
+    visibility: hidden;
+}
+
 nav ul li{
     font-family: "Concert One";
     list-style-type: none;
