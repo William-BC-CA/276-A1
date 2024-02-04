@@ -183,6 +183,7 @@ submitBtn.addEventListener('click', function(e){
     let result = 0;
     getWrapper[0].style.transform = "translateY(0%)";
     let hideQNumber = document.getElementById('questionProgress');
+    document.getElementById('descript').remove();
     prevBtn.remove();
     nextBtn.remove();
     submitBtn.remove();
